@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { addArticle } from "../actions";
 import uuidv1 from "uuid";
 
-class ConnectedForm extends Component {
+class Form extends Component {
   state = { title: "" };
 
   handleChange = e => {
@@ -38,14 +36,5 @@ class ConnectedForm extends Component {
     );
   }
 }
-
-const mapDispatchToProps = dispatch => ({
-  addArticle: article => dispatch(addArticle(article))
-});
-
-const Form = connect(
-  null,
-  mapDispatchToProps
-)(ConnectedForm);
 
 export default Form;
