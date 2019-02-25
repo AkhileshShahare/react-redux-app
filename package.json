@@ -6,6 +6,7 @@
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-scripts": "2.1.5",
+    "redux-actions": "^2.6.4",
     "redux-saga": "^1.0.1"
   },
   "scripts": {

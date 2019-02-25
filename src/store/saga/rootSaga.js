@@ -1,10 +1,6 @@
-import { ADD_ARTICLE } from "../constants/actionTypes";
-import { call, put, fork, take, takeEvery } from "redux-saga/effects";
-import {
-  addArticleSucceeded,
-  addArticleFailed,
-  badWordFoundInArticle
-} from "./../actions/index";
+import { ADD_ARTICLE } from "../../constants/actionTypes";
+import { put, takeEvery } from "redux-saga/effects";
+import { addArticleFailed, badWordFoundInArticle } from "./../actions/index";
 
 const forbiddenWords = ["a", "b", "c"];
 
@@ -20,7 +16,6 @@ function* saveArticle(article) {
 
   try {
     if (foundWord.length) yield put(badWordFoundInArticle());
-    yield put(addArticleSucceeded());
   } catch (err) {
     yield put(addArticleFailed(err));
   }
