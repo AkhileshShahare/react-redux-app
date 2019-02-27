@@ -1,6 +1,7 @@
 import React from "react";
 import List from "../list";
 import Form from "../form";
+import Post from "../posts";
 
 const App = () => (
   <div className="row mt-5">
@@ -11,6 +12,10 @@ const App = () => (
     <div className="col-md-4 offset-md-1">
       <h2>Add new article</h2>
       <Form />
+    </div>
+    <div className="col-md-4 offset-md-1">
+      <h2>Posts</h2>
+      <Post />
     </div>
   </div>
 );
