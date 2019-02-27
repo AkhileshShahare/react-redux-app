@@ -4,9 +4,9 @@ import { addArticleFailed, savePosts } from "../actions";
 import { fetchPostsApi } from "../../api/fetchPosts";
 
 function* fetchPosts() {
-  const data = yield call(fetchPostsApi);
-  yield put(savePosts(data));
   try {
+    const data = yield call(fetchPostsApi);
+    yield put(savePosts(data));
   } catch (err) {
     yield put(addArticleFailed(err));
   }
